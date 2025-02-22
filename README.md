@@ -6,7 +6,7 @@ Basic commands:
 
 3x3 board with colored players "X"/"О":
 
-<img width="300" alt="board_tictactoe" src="https://github.com/user-attachments/assets/3f9d3d58-da79-4fff-9828-00618f7ed7d3" />
+<img width="300" alt="board_tictactoe" src="https://github.com/user-attachments/assets/1c9c834f-74e1-4a29-ae30-34c82d2ad54c" />
 
 Two possible game endings "Win"/"Draw":
 
