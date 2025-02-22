@@ -2,6 +2,8 @@
 {
     public class Board
     {
+        public int Length => board.Length;
+
         private char[,] board;
 
         public Board()
@@ -39,7 +41,7 @@
             int row = (choice - 1) / 3;
             int col = (choice - 1) % 3;
 
-            return board[row, col] != 'X' && board[row, col] != 'O';
+            return board[row, col] != Program.PlayerFirst && board[row, col] != Program.PlayerSecond;
         }
 
         public void PlaceMarker(int choice, char currentPlayer)
@@ -62,7 +64,7 @@
 
             if (board[0, 0] == currentPlayer && board[1, 1] == currentPlayer && board[2, 2] == currentPlayer)
                 return true;
-            if (board[0, 2] == currentPlayer && board[1, 1] == currentPlayer && board[0, 2] == currentPlayer)
+            if (board[0, 2] == currentPlayer && board[1, 1] == currentPlayer && board[2, 0] == currentPlayer)
                 return true;
 
             return false;
@@ -71,7 +73,7 @@
         {
             foreach (var cell in board)
             {
-                if (cell != 'X' && cell != 'O')
+                if (cell != Program.PlayerFirst && cell != Program.PlayerSecond)
                     return false;
             }
 
