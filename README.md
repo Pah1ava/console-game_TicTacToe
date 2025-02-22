@@ -1,4 +1,4 @@
-Game TicTacToe.
+`# Tic-Tac-Toe Game`
 
 
 Basic commands:
@@ -16,4 +16,6 @@ Basic commands:
 Two possible game endings:
 
 ![win_draw](https://github.com/user-attachments/assets/29484598-0a71-4647-88ac-ad4dd06af898)
+
+
 
