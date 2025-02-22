@@ -10,4 +10,5 @@ Basic commands:
 
 Two possible game endings "Win"/"Draw":
 
-<img width="300" alt="win" src="https://github.com/user-attachments/assets/83853c41-390f-4974-8025-a72f454b39d7" />  <img width="300" alt="draw" src="https://github.com/user-attachments/assets/c3cc2ca9-c7d9-4053-9855-d6b5460ac73f" />
+![win_draw](https://github.com/user-attachments/assets/a523fdc8-9b38-4871-9572-241939082c82)
+
