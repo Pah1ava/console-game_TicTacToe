@@ -2,7 +2,10 @@
 {
     class Program
     {
-        static char currentPlayer = 'X';
+        public const char PlayerFirst = 'X';
+        public const char PlayerSecond = 'O';
+
+        static char currentPlayer = PlayerFirst;
         static void Main(string[] args)
         {
             ShowMenu();
@@ -20,8 +23,8 @@
                 Console.Clear();
                 Messages.DisplayWelcomeMessage();
 
-                Console.WriteLine("1 - PLAY \n" +
-                                  "2 - EXIT \n");
+                Console.WriteLine($"{PlayCommand} - PLAY \n" +
+                                  $"{ExitCommand} - EXIT \n");
 
                 Console.Write("COMMAND: ");
                 string userInput = Console.ReadLine();
@@ -64,7 +67,7 @@
                 Console.Clear();
                 board.DrawBoard();
 
-                PlayerInput(board);
+                GetPlayerInput(board);
 
                 if (board.CheckWin(currentPlayer))
                 {
@@ -72,6 +75,8 @@
                     board.DrawBoard();
 
                     Messages.DisplayWinMessage(currentPlayer);
+                    ShowMenu();
+
                     break;
                 }
                 if (board.CheckDraw())
@@ -89,22 +94,23 @@
 
         public static void SetPlayerColor(char currentPlayer)
         {
-            if (currentPlayer == 'X')
+            if (currentPlayer == PlayerFirst)
                 Console.ForegroundColor = ConsoleColor.Magenta;
-            else if (currentPlayer == 'O')
+            else if (currentPlayer == PlayerSecond)
                 Console.ForegroundColor = ConsoleColor.Blue;
             else
                 Console.ResetColor();
         }
 
-        public static void PlayerInput(Board board)
+        public static void GetPlayerInput(Board board)
         {
+
             SetPlayerColor(currentPlayer);
             int choice;
-            Console.Write($"PLAYER {currentPlayer}. YOUR CHOICE (1-9): ");
+            Console.Write($"PLAYER {currentPlayer}. YOUR CHOICE (1-{board.Length}): ");
             Console.ResetColor();
 
-            while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 9 || !board.IsCellAvailable(choice))
+            while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > board.Length || !board.IsCellAvailable(choice))
             {
                 Console.WriteLine("NOT CORRECT!");
             }
@@ -114,7 +120,7 @@
 
         public static void SwichPlayer()
         {
-            currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+            currentPlayer = (currentPlayer == PlayerFirst) ? PlayerSecond : PlayerFirst;
         }
     }
 }
