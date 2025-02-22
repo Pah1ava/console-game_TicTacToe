@@ -16,8 +16,6 @@
             Console.WriteLine(winMessage);
             Console.ResetColor();
             Console.ReadKey();
-
-            Program.ShowMenu();
         }
 
         public static void DisplayDrawMessage()
