@@ -3,6 +3,7 @@ A simple two-player game where players take turns marking empty cells on a 3x3 g
 
 ## Basic commands:
 
+
 <img width="170" alt="commands" src="https://github.com/user-attachments/assets/27a095af-a4f3-473c-a2bd-b61c414f44af" />
 
 
